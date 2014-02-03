@@ -1,8 +1,7 @@
-LOG=~/Dropbox/Backup/log.log
-EXC=~/Dropbox/Backup/exc.txt
-SRC=~/Dropbox/Backup/src.txt
-DST=~/Dropbox/Backup/dst.txt
-
+LOG="$(dirname $0)/log.log"
+EXC="$(dirname $0)/exc.txt"
+SRC="$(dirname $0)/src.txt"
+DST="$(dirname $0)/dst.txt"
 
 echo =============================== >> $LOG
 echo "" >> $LOG
