@@ -13,7 +13,7 @@ One could theoretically make it work in CygWin, but I give absolutely no guarant
 * Move the repo to any out-of the way location you like.
 * Open up a terminal, navigate to said location, and execute ```sudo bash setup.sh```
  
-The setup script simply adds a line into your crontab to execute the backup script once an hour. If you're [cron](http://linux.die.net/man/1/crontab) savvy, you can scip this installation step and setup your own custom schedule. 
+The setup script simply adds a line into your crontab to execute the backup script once an hour. If you're [cron](http://linux.die.net/man/1/crontab) savvy, you can skip this installation step and setup your own custom schedule. 
 
 There you go, you are now set up!
 
@@ -21,9 +21,13 @@ There you go, you are now set up!
 
 ###Basic configuration
 
-Now, to configure your Rsync+, you simply need to pick which directories you want to sync, and pick a directory to sync them to. Per source-destination pair, type in the __absolute path__ (I.E. no ```~/Documents/filename```, must be ```/users/user/Documents/filename```) of the source into the ```src.txt``` file, and the path of the destination into the ```dst.txt``` file. __They need to be listed in the same order in both files__!
+Now, to configure your Rsync+, you simply need to pick which directories you want to sync, and pick a directory to sync them to. Per source-destination pair, type in the __absolute path__ (I.E. no ```~/Documents/filename```, must be ```/users/user/Documents/filename```) of the source into the ```src.txt``` file, and the path of the destination into the ```dst.txt``` file. 
 
-###Advance configuration with ```--exclude```
+__These need to be listed in the same order in both files__!
+
+Also read up on [trailing slashes](https://www.google.com/search?q=rsync+trailing+slash) in rsync and how they relate to directory/file copying etc. to be sure that you're copying what you want to. I'd suggest doing a few test directories and test runs if you're not comfortable with rsync.
+
+###Advanced configuration with ```--exclude```
 Rsync has a built in exclude option, which works almost exactly like a .gitignore file! In the exc.txt, you can define which files to exclude.
 
 Some good examples include:
