@@ -1,9 +1,9 @@
-#Rsync+
+# Rsync+
 Rsync+ is a bash script based on the popular file-syncing utility called [rsync](http://linux.die.net/man/1/rsync).
 
 The script essentially parses through two text files, each containing a list of either sources and destinations. Rsync plus will then one-way sync the directories and files from the source text to the destination text, matching on a line-by-line basis.
 
-##Installation
+## Installation
 
 __Note that this requires some sort of *nix system with rsync installed.__ 
 
@@ -17,9 +17,9 @@ The setup script simply adds a line into your crontab to execute the backup scri
 
 There you go, you are now set up!
 
-##Configuration
+## Configuration
 
-###Basic configuration
+### Basic configuration
 
 Now, to configure your Rsync+, you simply need to pick which directories you want to sync, and pick a directory to sync them to. Per source-destination pair, type in the __absolute path__ (I.E. no ```~/Documents/filename```, must be ```/users/user/Documents/filename```) of the source into the ```src.txt``` file, and the path of the destination into the ```dst.txt``` file. 
 
@@ -27,7 +27,7 @@ __These need to be listed in the same order in both files__!
 
 Also read up on [trailing slashes](https://www.google.com/search?q=rsync+trailing+slash) in rsync and how they relate to directory/file copying etc. to be sure that you're copying what you want to. I'd suggest doing a few test directories and test runs if you're not comfortable with rsync.
 
-###Advanced configuration with ```--exclude```
+### Advanced configuration with ```--exclude```
 Rsync has a built in exclude option, which works almost exactly like a .gitignore file! In the exc.txt, you can define which files to exclude.
 
 Some good examples include:
